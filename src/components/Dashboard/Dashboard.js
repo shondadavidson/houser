@@ -15,6 +15,8 @@ class Dashboard extends Component {
       state: '',
       zip: ''
     }
+    
+    this.deleteHouse = this.deleteHouse.bind(this)
 
   }
 
@@ -31,6 +33,12 @@ class Dashboard extends Component {
     })
   }
 
+  deleteHouse(id){
+    axios.delete(`/api/house/${id}`).then(res => {
+      this.setState({houses: res.data})
+    })
+  }
+
 
 
 
@@ -38,7 +46,8 @@ class Dashboard extends Component {
     const mappedHouses = this.state.houses.map(house => {
       return ( <House
         key={house.id}
-        house={house} />
+        house={house}
+        deleteHouse={this.deleteHouse} />
       )
     })
     return (
