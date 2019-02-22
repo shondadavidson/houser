@@ -60,7 +60,7 @@ export function updateMortgage(mortgage){
         payload: mortgage
     }
 }
-export function updateRen(rent){
+export function updateRent(rent){
     return {
         type: UPDATE_RENT,
         payload: rent
@@ -70,6 +70,7 @@ export function updateRen(rent){
 function reducer(state = initialState, action){
     switch( action.type) {
         case UPDATE_NAME:
+        console.log(action.payload)
             return Object.assign( {}, state, {name: action.payload})
         case UPDATE_ADDRESS:
             return Object.assign( {}, state, {address: action.payload})
@@ -85,7 +86,8 @@ function reducer(state = initialState, action){
             return Object.assign( {}, state, {mortgage: action.payload})
         case UPDATE_RENT:
             return Object.assign( {}, state, {rent: action.payload})
-
+        default:
+            return state
         }
 }
 

@@ -54,7 +54,7 @@ class Dashboard extends Component {
       <div className="Dashboard">
         <p>Dashboard Screen</p>
   
-        <Link to="/wizard">
+        <Link to="wizard/step1">
           <button>Add New Property</button>
         </Link>
         {mappedHouses}
