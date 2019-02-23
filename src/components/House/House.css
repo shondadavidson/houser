@@ -1,0 +1,7 @@
+.House {
+    width: 100%;
+    /* height: 150px; */
+    background-color: #dedede;
+    margin: 20px 0;
+    position: relative;
+}

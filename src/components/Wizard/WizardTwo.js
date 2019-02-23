@@ -14,6 +14,7 @@ goBack = () => {
                 <h5>Image URL</h5>
                     <input type='text'
                     placeholder='Img Url'
+                    value={this.props.img}
                     onChange={ (e) => updateImg(e.target.value)}/>
                     
                     <button onClick={this.goBack}>Go Back</button>

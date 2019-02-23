@@ -1,11 +1,12 @@
 import React from 'react';
+import './House.css';
 
 
 export default function House (props){
     // console.log(2, props)
     
     return (
-        <div>
+        <div className="House">
             <p>{props.house.name}</p>
             <p>{props.house.address}</p>
             <p>{props.house.city}</p>
@@ -14,7 +15,7 @@ export default function House (props){
             <p>{props.house.mortgage}</p>
             <p>{props.house.rent}</p>
             <button onClick={ () => props.deleteHouse(props.house.id)}>Delete</button>
-            <p>- - - - - - - - - - - - - - - -</p>
+            
         </div>
     )
 }

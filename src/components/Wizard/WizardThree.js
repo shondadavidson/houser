@@ -1,6 +1,6 @@
 import React,  { Component } from 'react';
 import {connect} from 'react-redux' 
-import {updateMortgage, updateRent } from '../../ducks/reducer'
+import {updateMortgage, updateRent, cancelButton } from '../../ducks/reducer'
 import axios from 'axios'
 
 class WizardThree extends Component {
@@ -15,14 +15,9 @@ addHouse(){
     axios.post('/api/house', {
         name, address, city, state, zip, img, mortgage, rent
         }).then(res => {
-        this.setState({
-            houses: res.data,
-            name: '',
-            address: '',
-            city: '',
-            state: '',
-            zip: ''
-        })
+        this.props.history.push("/")
+        this.props.cancelButton()
+
         })
     }
     render(){
@@ -34,10 +29,12 @@ addHouse(){
                     <h5>Monthly Mortgage Amount</h5>
                     <input type='text'
                     placeholder='0'
+                    value={this.props.mortgage}
                     onChange={ (e) => updateMortgage(e.target.value)}/>
                     <h5>Desired Monthly Rent</h5>
                     <input type='text'
                     placeholder='0'
+                    value={this.props.rent}
                     onChange={ (e) => updateRent(e.target.value)}/>
 
                     <button onClick={this.goBack}>Go Back</button>
@@ -55,4 +52,4 @@ function mapStateToProps(state) {
     return state
 }
 
-export default connect(mapStateToProps, {updateMortgage, updateRent})(WizardThree)
+export default connect(mapStateToProps, {updateMortgage, updateRent, cancelButton})(WizardThree)

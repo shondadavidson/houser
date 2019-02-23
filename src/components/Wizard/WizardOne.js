@@ -18,22 +18,27 @@ goBack = () => {
                     <h5>Property Name</h5>
                     <input type='text'
                     placeholder='name'
+                    value={this.props.name}
                     onChange={ (e) => updateName(e.target.value)}/>
                     <h5>Address</h5>
                     <input type='text'
                     placeholder='address'
+                    value={this.props.address}
                     onChange={ (e) => updateAddress(e.target.value)}/>
                     <h5>City</h5>
                     <input type='text'
                     placeholder='city'
+                    value={this.props.city}
                     onChange={ (e) => updateCity(e.target.value)}/>
                     <h5>State</h5>
                     <input type='text'
                     placeholder='state'
+                    value={this.props.state}
                     onChange={ (e) => updateState(e.target.value)}/>
                     <h5>Zip</h5>
                     <input type='text'
                     placeholder='zip'
+                    value={this.props.zip}
                     onChange={ (e) => updateZip(e.target.value)}/>
                     
                     <button onClick={this.goBack}>Go Back</button>
