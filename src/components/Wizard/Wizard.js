@@ -34,6 +34,5 @@ class Wizard extends Component {
   }
 }
 
-const mapStateToProps = state => state
 
-export default connect(mapStateToProps, {cancelButton})(Wizard);
+export default connect(() => {return {}}, {cancelButton})(Wizard);
